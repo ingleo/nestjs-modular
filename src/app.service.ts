@@ -5,7 +5,7 @@ import config from './config';
 @Injectable()
 export class AppService {
   constructor(
-    @Inject('API_KEY') private apiKey: string,
+    @Inject('OLD_API_KEY') private oldApiKey: any,
     @Inject('TASKS') private tasks: any[],
     @Inject(config.KEY) private configType: ConfigType<typeof config>,
     private configService: ConfigService,
@@ -14,6 +14,6 @@ export class AppService {
     console.log(this.tasks);
     const apiKey = this.configService.get<string>('API_KEY');
     const dbName = this.configType.database.name;
-    return `Hello World! ${apiKey} - ${dbName}`;
+    return `Hello World! ${this.oldApiKey.value} - ${apiKey} - ${dbName}- ${this.tasks[2].title}`;
   }
 }

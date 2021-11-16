@@ -41,6 +41,10 @@ import config from './config';
       },
       inject: [HttpService],
     },
+    {
+      provide: 'OLD_API_KEY',
+      useValue: { number: 1, value: '1a2b3c4d5e6f' },
+    },
   ],
 })
 export class AppModule {}

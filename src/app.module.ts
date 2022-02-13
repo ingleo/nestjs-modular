@@ -30,7 +30,10 @@ import config from './config';
   ],
   controllers: [AppController],
   providers: [
-    AppService,
+    {
+      provide: AppService,
+      useClass: AppService,
+    },
     {
       provide: 'TASKS',
       useFactory: async (httpService: HttpService) => {

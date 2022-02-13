@@ -8,8 +8,7 @@ const API_KEY_PROD_DB = '87654321';
   providers: [
     {
       provide: 'API_KEY_DB',
-      useValue:
-        process.env.NODE_ENV === 'production' ? API_KEY_PROD_DB : API_KEY_DB,
+      useValue: process.env.NODE_ENV === 'prod' ? API_KEY_PROD_DB : API_KEY_DB,
     },
   ],
   exports: ['API_KEY_DB'],

@@ -40,7 +40,7 @@ export class ProductsController {
 
   @Get('filter')
   getProductFilter() {
-    return `yo soy un filter`;
+    return `I'm filter`;
   }
 
   @Get(':productId')
